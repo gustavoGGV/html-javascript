@@ -21,17 +21,17 @@
 
             let intervalo = setInterval(()=>{
 
-            regressiva.innerText = contador;
-            contador--;
+                regressiva.innerText = contador;
+                contador--;
 
-            if(contador == -1){
+                if(contador == -1){
 
-                clearInterval(intervalo);
-                regressiva.innerText = "Tempo esgotado!";
+                    clearInterval(intervalo);
+                    regressiva.innerText = "Tempo esgotado!";
 
-            }
+                }
 
-        }, 1000);
+            }, 1000);
 
         })
         
