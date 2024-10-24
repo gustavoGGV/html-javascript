@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ol id="ol">
+        <li>Elemento 1</li>
+    </ol>
+
+    <button id="botao">Criar elemento</button>
+
+    <script>
+
+        lista=document.getElementById("ol");
+        botao=document.getElementById("botao");
+        let numeroElementos=1;
+
+        botao.addEventListener('click', ()=>{
+
+            numeroElementos++;
+            elemento=document.createElement("li");
+            textoElemento=document.createTextNode("Elemento "+numeroElementos);
+            elemento.appendChild(textoElemento);
+            lista.appendChild(elemento);
+
+        });
+
+    </script>
+
+</body>
+</html>
