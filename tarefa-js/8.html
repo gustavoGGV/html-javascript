@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8</title>
+</head>
+<body>
+    
+    <input id="input" type="text">
+    <p id="p"></p>
+
+    <script>
+
+        const textoUsuario=document.getElementById("input");
+        const texto=document.getElementById("p");
+
+        textoUsuario.addEventListener("keyup", ()=>{
+
+            let textoDigitado=input.value;
+
+            if(textoDigitado.length >= 3){
+
+                if(textoDigitado=="chocolate"){
+
+                    texto.innerText="Eu amo sorvete de chocolate!";
+
+                } else if(textoDigitado=="flocos"){
+
+                    texto.innerText="Ah, mas de chocolate é o meu favorito...";
+
+                }  else{
+
+                    texto.innerText="Ah, eu esperava um sabor de sorvete...";
+
+                }
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
