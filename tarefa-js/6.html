@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6</title>
+</head>
+<body>
+
+    <p id="nome"></p>
+    <input type="button" id="input" value="Gerar Nome">
+
+    <script>
+
+        const botao=document.getElementById("input");
+        const nome=document.getElementById("nome");
+
+        const titles = ["Sr.", "Mister", "Dom", "Lord", "Lady", "Capitão", "Dama"];
+        const names = ["Arthur", "Gwendolyn", "Merlin", "Lancelot", "Morgana", "Ragnar", "Éowyn"];
+        const classes = ["Mago", "Paladino", "Arqueiro", "Ladino", "Bárbaro", "Feiticeiro", "Cavaleiro"];
+        const locations = ["Valfenda", "Gondor", "Asgard", "Camelot", "Nárnia", "Babilônia", "Atlantis"];
+
+        botao.addEventListener("click", () =>{
+
+            const nomeAleatorio= titles[Math.floor(Math.random() * titles.length)] + " " + names[Math.floor(Math.random() * names.length)] + ", o " + classes[Math.floor(Math.random() * classes.length)] + " de " + locations[Math.floor(Math.random() * locations.length)] + ".";
+            nome.innerText=nomeAleatorio;
+
+        });
+            
+        
+    </script>
+</body>
+</html>
