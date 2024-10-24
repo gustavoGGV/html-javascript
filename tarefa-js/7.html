@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7</title>
+</head>
+<body>
+    
+    <img id="img" src="https://pbs.twimg.com/media/FofE5LvXoAEiiCh.jpg" width="20%">
+    <h1 id="h1"></h1>
+
+    <script>
+
+        const fala=document.getElementById("h1");
+        const personagem=document.getElementById("img");
+
+        img.addEventListener("mouseenter", ()=>{
+
+            fala.innerText="Olá!";
+
+        });
+
+        img.addEventListener("mouseleave", ()=>{
+
+            fala.innerText="Volta!";
+
+        });
+
+        img.addEventListener("mousemove", ()=>{
+
+            fala.innerText="To vendo esse ponteiro aí...";
+
+        });
+
+        img.addEventListener("click", ()=>{
+
+            fala.innerText="Por que você clicou em mim?";
+
+        });
+
+    </script>
+
+</body>
+</html>
