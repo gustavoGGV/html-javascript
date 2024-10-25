@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10</title>
+
+    <style>
+
+        .erro {
+
+            display: none;
+            color: tomato;
+
+        }
+
+        .grupo {
+
+            padding: 10px;
+
+        }
+
+        input {
+
+            outline: none;
+
+        }
+
+        input.invalido {
+
+            border: solid 2px tomato;
+
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <form action="">
+
+        <div class="grupo">
+
+            <input type="text" placeholder="informe o seu nome">
+            <span class="erro">o nome deve ter pelo menos três caracteres</span>
+
+        </div>
+
+        <div class="grupo">
+
+            <input type="text" placeholder="informe o seu e-mail">
+            <span class="erro">o e-mail precisa ser válido</span>
+
+        </div>
+
+        <div class="grupo">
+
+            <input type="password" placeholder="informe a sua senha">
+            <a class="alternarSenha">&#128065</a>
+            <span class="erro">a senha precisa de no mínimo 8 caracteres</span>
+
+        </div>
+
+        <div class="grupo">
+
+            <input type="password" placeholder="confirme sua senha">
+            <a class="alternarSenha2">&#128065</a>
+            <span class="erro">as senhas não estão iguais</span>
+
+        </div>
+
+        <div class="grupo">
+
+            <input type="submit" value="Enviar">
+
+        </div>
+
+    </form>
+
+    <script>
+
+        const inputs=document.querySelectorAll('input');
+        const erros=document.querySelectorAll('.erro');
+
+        function validaNome() {
+
+            if(inputs[0].value.length<3) {
+
+               erros[0].style.display='block'; 
+               inputs[0].classList.add('invalido');
+
+            } else {
+
+                erros[0].style.display='none';
+                inputs[0].classList.remove('invalido');
+
+            }
+
+        }
+
+        function validaEmail() {
+
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            if(emailRegex.test(inputs[1].value)==false) {
+
+                erros[1].style.display='block'; 
+                inputs[1].classList.add('invalido');
+
+            } else {
+
+                erros[1].style.display='none';
+                inputs[1].classList.remove('invalido');                
+
+            }
+
+        }
+
+        function validaSenha() {
+
+            const senhaRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
+            if(senhaRegex.test(inputs[2].value)==false) {
+
+                erros[2].style.display='block'; 
+                inputs[2].classList.add('invalido');
+
+            } else {
+
+                erros[2].style.display='none';
+                inputs[2].classList.remove('invalido');                
+
+            }
+
+        }
+
+        function validaConfirmacao() {
+
+            if(inputs[3].value===inputs[2].value) {
+
+                erros[3].style.display='none';
+                inputs[3].classList.remove('invalido');
+
+            } else {
+
+                erros[3].style.display='block'; 
+                inputs[3].classList.add('invalido');
+
+            }
+
+        }
+
+        /*function verSenha(senhaOuConfirmacao) {
+
+            const tipoAtual=inputs[senhaOuConfirmacao].getAttribute('type');
+            const tipo=tipoAtual==='password' ? 'text' : 'password';
+
+            inputs[senhaOuConfirmacao].setAttribute('type', tipo);
+
+            console.log("mudou")
+
+        } não funcionou*/
+
+        document.querySelector('form').addEventListener('submit', (evento)=> {
+
+            evento.preventDefault();
+
+            validaNome();
+            validaEmail();
+            validaSenha();
+            validaConfirmacao();
+
+        });
+
+        document.querySelector('.alternarSenha').addEventListener('click', ()=> {
+
+            const tipoAtual=inputs[2].getAttribute('type');
+            const tipo=tipoAtual==='password' ? 'text' : 'password'; // if ternário; resumido
+
+            inputs[2].setAttribute('type', tipo);
+            
+        });
+
+        document.querySelector('.alternarSenha2').addEventListener('click', ()=> {
+
+            const tipoAtual=inputs[3].getAttribute('type');
+            const tipo=tipoAtual==='password' ? 'text' : 'password'; // if ternário; resumido
+
+            inputs[3].setAttribute('type', tipo);
+
+        });
+
+
+    </script>
+
+</body>
+</html>
