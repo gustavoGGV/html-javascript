@@ -45,3 +45,4 @@ function obterTodosOsElementos() {
     return elementos ? JSON.parse(elementos) : [];
 
 };
+// quando damos um refresh na página, a lista some. teríamos que usar dom.contentLoaded
