@@ -21,36 +21,6 @@
 
     <main class="carrinho">
 
-        <!-- item 1 -->
-        <div class="item-carrinho">
-            <div class="item">
-                <img src="https://picsum.photos/300/500" alt="Imagem do Produto" class="item-img">
-                <div class="item-info">
-                    <h2>Nome do Produto</h2>
-                    <p class="preco">R$ 50,00</p>
-                    <label for="quantidade">Quantidade:</label>
-                    <input type="number" id="quantidade" name="quantidade" min="1" value="1">
-                </div>
-            </div>
-
-            <button class="botao-remover">Remover</button>
-        </div>
-
-        <!-- item 2 -->
-        <div class="item-carrinho">
-            <div class="item">
-                <img src="https://picsum.photos/300/500" alt="Imagem do Produto" class="item-img">
-                <div class="item-info">
-                    <h2>Nome do Produto</h2>
-                    <p class="preco">R$ 50,00</p>
-                    <label for="quantidade">Quantidade:</label>
-                    <input type="number" id="quantidade" name="quantidade" min="1" value="1">
-                </div>
-            </div>
-
-            <button class="botao-remover">Remover</button>
-        </div>
-
         <div class="total">
             <p>Total: R$ 50,00</p>
             <button class="botao-comprar">Finalizar Compra</button>
@@ -62,6 +32,41 @@
         let carrinho=localStorage.getItem("carrinho");
         carrinho=JSON.parse(carrinho);
         console.log(carrinho);
+        elementosNoCarrinho = carrinho.length;
+
+        for (let i = 0; i < elementosNoCarrinho; i++) {
+            
+            criarItemCarrinho(carrinho(i));
+            
+        }
+        
+        function criarItemCarringo() {
+
+            let itemCarrinho = document.createElement('div');
+            item.classList.add = 'item-carrinho';
+
+            let item = document.createElement('div');
+            item.classList.add = 'item';
+
+            let itemInfo = document.createElement('div');
+            itemInfo.classList.add = 'item-info';
+
+            let nomeProduto = document.createElement('h2');
+            nomeProduto.textContent = 'teste';
+
+            let precoProduto = document.createElement('p');
+            precoProduto.classList.add = 'preco';
+            precoProduto.textContent = '10,00';
+
+            itemInfo.appendChild(nomeProduto);
+            itemInfo.appendChild(precoProduto);
+            item.appendChild(itemInfo);
+            itemCarrinho.appendChild(item);
+
+            let carrinho = document.querySelector('.carrinho');
+            carrinho.appendChild(itemCarrinho);
+
+        };
 
     </script>
 
